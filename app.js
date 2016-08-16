@@ -6,9 +6,10 @@ var http        = require('http'),
     app         = express(),
     server      = http.createServer(app),
     port        = 3333;
+    url			= require("./url");
 
 
-global.workDir = './html_static/';
+global.workDir = url.url;
 app.use(compression());
 app.use(logger("dev"));
 app.get('*', express.static(workDir));
